@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sumit | Climate Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f7f4;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --accent: #1a4a6b;
+      --accent-light: #e8f0f7;
+      --border: #e2ddd8;
+      --tag-bg: #eef2f7;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(249,247,244,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid; grid-template-columns: 1fr 260px;
+      gap: 4rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-block; margin-bottom: 1rem;
+      background: var(--accent-light); color: var(--accent);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 2rem;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-size: 3.2rem; font-weight: 500;
+      line-height: 1.15; margin-bottom: 0.6rem; color: var(--text);
+    }
+    .hero-affil {
+      font-size: 0.95rem; color: var(--muted); margin-bottom: 1.4rem; line-height: 1.6;
+    }
+    .hero-affil strong { color: var(--text); }
+    .hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.1rem; border-radius: 6px; font-size: 0.85rem;
+      font-weight: 500; text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #133a56; }
+    .btn-outline { border: 1.5px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-photo {
+      width: 220px; height: 220px; border-radius: 50%;
+      object-fit: cover; border: 4px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      justify-self: center;
+    }
+    .hero-photo-placeholder {
+      width: 220px; height: 220px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-light) 0%, #d0e4f5 100%);
+      border: 4px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 4rem; color: var(--accent);
+      justify-self: center;
+    }
+
+    /* ─── TAGS ─── */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+    .tag {
+      background: var(--tag-bg); color: var(--accent);
+      font-size: 0.78rem; font-weight: 500;
+      padding: 0.3rem 0.8rem; border-radius: 4px;
+    }
+
+    /* ─── SECTIONS ─── */
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--serif); font-size: 2rem; font-weight: 500;
+      color: var(--text); margin-bottom: 0.4rem;
+    }
+    .section-subtitle {
+      font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem;
+    }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+
+    /* ─── ABOUT ─── */
+    .about-text { font-size: 1.05rem; color: var(--text); max-width: 720px; }
+
+    /* ─── EDUCATION ─── */
+    .timeline { position: relative; padding-left: 1.8rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 2px; background: var(--border);
+    }
+    .tl-item { position: relative; margin-bottom: 2.2rem; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -1.8rem; top: 8px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .tl-year { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-bottom: 0.2rem; }
+    .tl-degree { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .tl-dept { font-size: 0.9rem; color: var(--accent); }
+    .tl-inst { font-size: 0.88rem; color: var(--muted); }
+
+    /* ─── RESEARCH ─── */
+    .research-grid { display: grid; gap: 2rem; }
+    .research-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      display: grid; grid-template-columns: 320px 1fr;
+    }
+    .research-card img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .research-img-placeholder {
+      background: linear-gradient(135deg, #e8f0f7, #d0e4f5);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 3rem; min-height: 200px;
+    }
+    .research-body { padding: 2rem; }
+    .research-body h3 {
+      font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
+      color: var(--text); margin-bottom: 0.8rem; line-height: 1.4;
+    }
+    .research-body p { font-size: 0.93rem; color: var(--muted); margin-bottom: 1rem; }
+    .research-link {
+      font-size: 0.83rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    .research-link:hover { text-decoration: underline; }
+
+    /* ─── PUBLICATIONS ─── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .pub-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.4rem 1.6rem;
+      display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+    }
+    .pub-type {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; background: var(--accent); color: #fff;
+      padding: 0.25rem 0.6rem; border-radius: 4px; white-space: nowrap; margin-top: 2px;
+    }
+    .pub-title {
+      font-weight: 600; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem;
+      text-decoration: none; display: block;
+    }
+    .pub-title:hover { color: var(--accent); }
+    .pub-authors { font-size: 0.85rem; color: var(--muted); }
+    .pub-venue { font-size: 0.83rem; color: var(--accent); font-style: italic; margin-top: 0.2rem; }
+
+    /* ─── AWARDS ─── */
+    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .award-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.4rem 1.6rem;
+    }
+    .award-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+    .award-name { font-weight: 600; font-size: 0.97rem; color: var(--text); margin-bottom: 0.25rem; }
+    .award-meta { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ─── PHOTOS ─── */
+    .photo-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .photo-item { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+    .photo-item img:hover { transform: scale(1.04); }
+    .photo-placeholder {
+      background: linear-gradient(135deg, #e0eaf4, #c8ddef);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 2rem; height: 100%;
+    }
+
+    /* ─── NEWS ─── */
+    .news-list { display: flex; flex-direction: column; gap: 1rem; }
+    .news-item {
+      display: grid; grid-template-columns: 80px 1fr;
+      gap: 1.2rem; align-items: start;
+      padding: 1.2rem 1.4rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px;
+    }
+    .news-date { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-align: center; line-height: 1.3; padding-top: 2px; }
+    .news-text { font-size: 0.9rem; color: var(--text); }
+    .news-text a { color: var(--accent); }
+
+    /* ─── CONTACT ─── */
+    .contact-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 3rem; text-align: center; max-width: 620px; margin: 0 auto;
+    }
+    .contact-box p { color: var(--muted); font-size: 0.97rem; margin-bottom: 1.6rem; }
+    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border); text-align: center;
+      padding: 2rem; font-size: 0.82rem; color: var(--muted);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo-placeholder, .hero-photo { justify-self: center; order: -1; }
+      .hero-links { justify-content: center; }
+      .tags { justify-content: center; }
+      .research-card { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Sumit</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <span class="hero-badge">PhD Scholar · [Year] Year</span>
+    <h1>Your Full Name</h1>
+    <p class="hero-affil">
+      [Your Department / Centre Name]<br>
+      <strong>[Your Institution Name], [City]</strong>
+    </p>
+    <div class="hero-links">
+      <a href="mailto:your.email@institution.ac.in" class="btn btn-primary">✉ Email</a>
+      <a href="https://linkedin.com/in/yourprofile" class="btn btn-outline" target="_blank">LinkedIn</a>
+      <a href="#publications" class="btn btn-outline">Publications</a>
+    </div>
+    <div class="tags">
+      <span class="tag">Climate Science</span>
+      <span class="tag">Black Carbon</span>
+      <span class="tag">Aerosol Forcing</span>
+      <span class="tag">Earth System Modelling</span>
+      <span class="tag">CAM5 Model</span>
+      <!-- Add or edit your research keywords -->
+    </div>
+  </div>
+  <!-- Replace with your actual photo: <img src="photo.jpg" class="hero-photo" alt="Your Name"> -->
+  <div class="hero-photo-placeholder">S</div>
+</div>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Introduction</p>
+  <h2 class="section-title">About Me</h2>
+  <p class="section-subtitle">Climate scientist studying aerosol–climate interactions</p>
+  <p class="about-text">
+    I am a [X]th-year PhD research scholar at the <strong>[Your Department]</strong>,
+    [Your Institution]. My research focuses on [brief description of your work — e.g.,
+    the radiative and climate effects of black carbon aerosols, model biases, and feedback
+    analysis using CAM5 and observational datasets].
+    <br><br>
+    [Add another paragraph here describing your methodology, tools, or broader goals.]
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">Education</h2>
+  <p class="section-subtitle">Academic journey across India's premier institutions</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">20XX – Present</div>
+      <div class="tl-degree">PhD, [Your Field]</div>
+      <div class="tl-dept"><a href="#" style="color:inherit;">[Your Department / Centre]</a></div>
+      <div class="tl-inst">[Your Institution], [City]</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">20XX – 20XX</div>
+      <div class="tl-degree">M.Tech. / M.Sc., [Field]</div>
+      <div class="tl-dept">[Department Name]</div>
+      <div class="tl-inst">[Institution], [City]</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">20XX – 20XX</div>
+      <div class="tl-degree">B.Sc., [Field]</div>
+      <div class="tl-dept">[Department Name]</div>
+      <div class="tl-inst">[Institution], [City]</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- RESEARCH -->
+<section id="research">
+  <p class="section-label">Work</p>
+  <h2 class="section-title">Research</h2>
+  <p class="section-subtitle">Current projects on aerosol–climate feedbacks</p>
+  <div class="research-grid">
+
+    <div class="research-card">
+      <!-- <img src="your_figure1.png" alt="Research Figure 1"> -->
+      <div class="research-img-placeholder">🌍</div>
+      <div class="research-body">
+        <h3>Title of Your First Research Project</h3>
+        <p>
+          Describe this project in 3–4 sentences. What is the research question?
+          What data or model did you use? What are the key findings?
+        </p>
+        <a class="research-link" href="#">→ Related Publication</a>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <!-- <img src="your_figure2.png" alt="Research Figure 2"> -->
+      <div class="research-img-placeholder">🌡️</div>
+      <div class="research-body">
+        <h3>Title of Your Second Research Project</h3>
+        <p>
+          Describe this project in 3–4 sentences. What is the research question?
+          What data or model did you use? What are the key findings?
+        </p>
+        <a class="research-link" href="#">→ Related Publication</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <p class="section-label">Scholarly Output</p>
+  <h2 class="section-title">Publications</h2>
+  <p class="section-subtitle">Peer-reviewed articles and conference papers</p>
+  <div class="pub-list">
+
+    <div class="pub-item">
+      <span class="pub-type">Journal</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/YOUR_DOI" target="_blank">
+          Title of Your Journal Paper
+        </a>
+        <div class="pub-authors">Your Name, Co-author 1, Co-author 2</div>
+        <div class="pub-venue">Journal Name, Year · doi:YOUR_DOI</div>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-type">Conference</span>
+      <div>
+        <a class="pub-title" href="#" target="_blank">
+          Title of Your Conference Paper / Poster
+        </a>
+        <div class="pub-authors">Your Name, Co-author 1, Co-author 2</div>
+        <div class="pub-venue">Conference Name, Location, Year</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AWARDS -->
+<section id="awards">
+  <p class="section-label">Recognition</p>
+  <h2 class="section-title">Awards & Fellowships</h2>
+  <p class="section-subtitle">Recognitions received throughout my academic career</p>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-name">Award / Fellowship Name</div>
+      <div class="award-meta">Year – Present · Brief description of the award and awarding body.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🎖</div>
+      <div class="award-name">Award / Fellowship Name</div>
+      <div class="award-meta">Year · Brief description.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🔬</div>
+      <div class="award-name">Award / Fellowship Name</div>
+      <div class="award-meta">Year · Brief description.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PHOTOS -->
+<section id="photos">
+  <p class="section-label">Personal</p>
+  <h2 class="section-title">Photography</h2>
+  <p class="section-subtitle">Moments captured through my lens — nature, fieldwork, and travels</p>
+  <div class="photo-grid">
+    <!-- Replace each placeholder with: <img src="IMG_1.jpeg" alt="Caption"> -->
+    <div class="photo-item"><div class="photo-placeholder">🌄</div></div>
+    <div class="photo-item"><div class="photo-placeholder">🌊</div></div>
+    <div class="photo-item"><div class="photo-placeholder">🌿</div></div>
+    <div class="photo-item"><div class="photo-placeholder">🏔</div></div>
+    <div class="photo-item"><div class="photo-placeholder">🌤</div></div>
+    <div class="photo-item"><div class="photo-placeholder">🌻</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- NEWS -->
+<section id="news">
+  <p class="section-label">Updates</p>
+  <h2 class="section-title">News & Links</h2>
+  <p class="section-subtitle">Recent activities, features, and events</p>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">Mon YYYY</div>
+      <div class="news-text">Brief description of news item. <a href="#">Link to source</a>.</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">Mon YYYY</div>
+      <div class="news-text">Brief description of another news item. <a href="#">Link to source</a>.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Get in Touch</p>
+  <h2 class="section-title" style="text-align:center;">Contact</h2>
+  <p class="section-subtitle" style="text-align:center;">Open to research discussions, collaborations, and academic conversations.</p>
+  <div class="contact-box">
+    <p>Feel free to reach out via email or connect on LinkedIn for collaboration, questions, or discussions about my research.</p>
+    <div class="contact-links">
+      <a href="mailto:your.email@institution.ac.in" class="btn btn-primary">✉ your.email@institution.ac.in</a>
+      <a href="https://linkedin.com/in/yourprofile" class="btn btn-outline" target="_blank">🔗 LinkedIn</a>
+      <a href="https://your-institution.ac.in" class="btn btn-outline" target="_blank">🏛 Institution</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Your Name · [Your Department], [Institution] · Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
