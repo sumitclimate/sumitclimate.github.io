@@ -2,520 +2,846 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sumit | Climate Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sumit Kumar — PhD Candidate in Atmospheric & Oceanic Sciences at the Indian Institute of Science, Bengaluru. Research on radiative forcing, climate feedbacks, methane, black carbon, stratospheric aerosols, and solar geoengineering." />
+  <meta name="author" content="Sumit Kumar" />
+  <meta name="theme-color" content="#173f5f" />
+  <title>Sumit Kumar | Atmospheric & Climate Scientist</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f9f7f4;
+      --bg: #f7f6f2;
       --surface: #ffffff;
-      --text: #1a1a1a;
-      --muted: #6b6b6b;
-      --accent: #1a4a6b;
-      --accent-light: #e8f0f7;
-      --border: #e2ddd8;
-      --tag-bg: #eef2f7;
-      --serif: 'EB Garamond', Georgia, serif;
-      --sans: 'DM Sans', sans-serif;
+      --surface-soft: #f0f3f5;
+      --text: #17202a;
+      --muted: #66717a;
+      --accent: #173f5f;
+      --accent-2: #2b6f95;
+      --accent-light: #e8f0f5;
+      --border: #dbe0e4;
+      --shadow: 0 12px 40px rgba(23, 63, 95, 0.08);
+      --serif: "EB Garamond", Georgia, serif;
+      --sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1160px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.72;
       font-size: 16px;
     }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    ::selection { background: var(--accent-light); color: var(--accent); }
 
-    /* ─── NAV ─── */
+    /* ---------- NAV ---------- */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(249,247,244,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 246, 242, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(219, 224, 228, 0.92);
     }
     .nav-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px;
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
     .nav-logo {
-      font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
-      color: var(--text); text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      flex-wrap: wrap;
+    }
     .nav-links a {
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
-      color: var(--muted); text-decoration: none; transition: color 0.2s;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color .2s ease;
     }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ─── HERO ─── */
-    .hero {
-      max-width: 1100px; margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-      display: grid; grid-template-columns: 1fr 260px;
-      gap: 4rem; align-items: center;
+    /* ---------- COMMON ---------- */
+    .container {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin: 0 auto;
     }
-    .hero-badge {
-      display: inline-block; margin-bottom: 1rem;
-      background: var(--accent-light); color: var(--accent);
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 2rem;
+    section { padding: 5rem 0; }
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin: 0 auto;
     }
-    .hero h1 {
-      font-family: var(--serif); font-size: 3.2rem; font-weight: 500;
-      line-height: 1.15; margin-bottom: 0.6rem; color: var(--text);
-    }
-    .hero-affil {
-      font-size: 0.95rem; color: var(--muted); margin-bottom: 1.4rem; line-height: 1.6;
-    }
-    .hero-affil strong { color: var(--text); }
-    .hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.5rem 1.1rem; border-radius: 6px; font-size: 0.85rem;
-      font-weight: 500; text-decoration: none; transition: all 0.2s;
-    }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: #133a56; }
-    .btn-outline { border: 1.5px solid var(--border); color: var(--text); }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-    .hero-photo {
-      width: 220px; height: 220px; border-radius: 50%;
-      object-fit: cover; border: 4px solid var(--border);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-      justify-self: center;
-    }
-    .hero-photo-placeholder {
-      width: 220px; height: 220px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-light) 0%, #d0e4f5 100%);
-      border: 4px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 4rem; color: var(--accent);
-      justify-self: center;
-    }
-
-    /* ─── TAGS ─── */
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-    .tag {
-      background: var(--tag-bg); color: var(--accent);
-      font-size: 0.78rem; font-weight: 500;
-      padding: 0.3rem 0.8rem; border-radius: 4px;
-    }
-
-    /* ─── SECTIONS ─── */
-    section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-    .section-label {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 0.5rem;
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: .65rem;
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
     }
     .section-title {
-      font-family: var(--serif); font-size: 2rem; font-weight: 500;
-      color: var(--text); margin-bottom: 0.4rem;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: .5rem;
     }
     .section-subtitle {
-      font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 2.25rem;
     }
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      padding: .62rem 1rem;
+      border-radius: 7px;
+      font-size: .84rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #0f324c; }
+    .btn-outline { border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.2rem; }
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: .3rem .72rem;
+      font-size: .76rem;
+      font-weight: 600;
+    }
 
-    /* ─── ABOUT ─── */
-    .about-text { font-size: 1.05rem; color: var(--text); max-width: 720px; }
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 6.25rem 0 5.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr);
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .34rem .75rem;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 7vw, 5.6rem);
+      line-height: .98;
+      font-weight: 500;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+    }
+    .hero-role {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      max-width: 760px;
+    }
+    .hero-role strong { color: var(--text); }
+    .hero-summary {
+      max-width: 780px;
+      font-size: 1.02rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-photo {
+      width: min(280px, 100%);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      justify-self: end;
+      border: 5px solid #fff;
+      box-shadow: 0 16px 50px rgba(23, 63, 95, .13);
+      background: linear-gradient(145deg, #d9e6ef, #edf2f5);
+    }
+    .photo-placeholder {
+      width: min(280px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      justify-self: end;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #d9e6ef, #edf2f5);
+      border: 5px solid #fff;
+      box-shadow: 0 16px 50px rgba(23, 63, 95, .13);
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 5rem;
+    }
 
-    /* ─── EDUCATION ─── */
-    .timeline { position: relative; padding-left: 1.8rem; }
+    /* ---------- ABOUT ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-copy p + p { margin-top: 1.1rem; }
+    .facts {
+      display: grid;
+      gap: .8rem;
+    }
+    .fact {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    .fact-label {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .69rem;
+      font-weight: 700;
+      margin-bottom: .2rem;
+    }
+    .fact-value { font-weight: 600; }
+
+    /* ---------- TIMELINE ---------- */
+    .timeline {
+      position: relative;
+      padding-left: 1.7rem;
+    }
     .timeline::before {
-      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
-      width: 2px; background: var(--border);
+      content: "";
+      position: absolute;
+      left: .3rem;
+      top: .55rem;
+      bottom: .55rem;
+      width: 2px;
+      background: var(--border);
     }
-    .tl-item { position: relative; margin-bottom: 2.2rem; }
+    .tl-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
     .tl-item::before {
-      content: ''; position: absolute; left: -1.8rem; top: 8px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--accent); border: 2px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--accent);
+      content: "";
+      position: absolute;
+      left: -.04rem;
+      top: .45rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg);
     }
-    .tl-year { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-bottom: 0.2rem; }
-    .tl-degree { font-size: 1rem; font-weight: 600; color: var(--text); }
-    .tl-dept { font-size: 0.9rem; color: var(--accent); }
-    .tl-inst { font-size: 0.88rem; color: var(--muted); }
+    .tl-year { color: var(--muted); font-size: .8rem; font-weight: 700; margin-bottom: .25rem; }
+    .tl-title { font-size: 1.04rem; font-weight: 700; }
+    .tl-accent { color: var(--accent-2); font-size: .9rem; font-weight: 600; }
+    .tl-meta { color: var(--muted); font-size: .86rem; }
 
-    /* ─── RESEARCH ─── */
-    .research-grid { display: grid; gap: 2rem; }
+    /* ---------- RESEARCH ---------- */
+    .research-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
     .research-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-      display: grid; grid-template-columns: 320px 1fr;
+      display: grid;
+      grid-template-columns: minmax(240px, 320px) 1fr;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
     }
-    .research-card img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+    .research-card img,
+    .research-visual {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(145deg, #e4edf3, #d0e0eb);
     }
-    .research-img-placeholder {
-      background: linear-gradient(135deg, #e8f0f7, #d0e4f5);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 3rem; min-height: 200px;
+    .research-visual {
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 3rem;
     }
-    .research-body { padding: 2rem; }
+    .research-body { padding: 1.8rem; }
+    .research-kicker {
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-bottom: .45rem;
+    }
     .research-body h3 {
-      font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
-      color: var(--text); margin-bottom: 0.8rem; line-height: 1.4;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      line-height: 1.25;
+      font-weight: 500;
+      margin-bottom: .7rem;
     }
-    .research-body p { font-size: 0.93rem; color: var(--muted); margin-bottom: 1rem; }
+    .research-body p { color: var(--muted); font-size: .92rem; }
     .research-link {
-      font-size: 0.83rem; font-weight: 600; color: var(--accent);
-      text-decoration: none; letter-spacing: 0.02em;
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .83rem;
     }
     .research-link:hover { text-decoration: underline; }
 
-    /* ─── PUBLICATIONS ─── */
-    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    /* ---------- PUBLICATIONS ---------- */
+    .pub-list { display: grid; gap: 1rem; }
     .pub-item {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.4rem 1.6rem;
-      display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1.25rem 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
     }
     .pub-type {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
-      text-transform: uppercase; background: var(--accent); color: #fff;
-      padding: 0.25rem 0.6rem; border-radius: 4px; white-space: nowrap; margin-top: 2px;
+      display: inline-flex;
+      align-self: start;
+      padding: .25rem .55rem;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
     .pub-title {
-      font-weight: 600; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem;
-      text-decoration: none; display: block;
+      font-weight: 700;
+      font-size: .98rem;
+      line-height: 1.45;
+      text-decoration: none;
     }
     .pub-title:hover { color: var(--accent); }
-    .pub-authors { font-size: 0.85rem; color: var(--muted); }
-    .pub-venue { font-size: 0.83rem; color: var(--accent); font-style: italic; margin-top: 0.2rem; }
+    .pub-authors { color: var(--muted); font-size: .84rem; margin-top: .25rem; }
+    .pub-venue { color: var(--accent-2); font-size: .82rem; font-style: italic; margin-top: .18rem; }
+    .pub-note { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
 
-    /* ─── AWARDS ─── */
-    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
-    .award-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.4rem 1.6rem;
+    /* ---------- CARDS ---------- */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
     }
-    .award-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
-    .award-name { font-weight: 600; font-size: 0.97rem; color: var(--text); margin-bottom: 0.25rem; }
-    .award-meta { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 1.35rem;
+    }
+    .card h3 { font-size: .98rem; margin-bottom: .45rem; }
+    .card p { color: var(--muted); font-size: .86rem; }
+    .card ul { margin: .5rem 0 0 1rem; color: var(--muted); font-size: .87rem; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 1.25rem 1.35rem;
+    }
+    .skill-group h3 { font-size: .92rem; margin-bottom: .65rem; }
+    .skill-group p { color: var(--muted); font-size: .87rem; }
 
-    /* ─── PHOTOS ─── */
-    .photo-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    }
-    .photo-item { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
-    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
-    .photo-item img:hover { transform: scale(1.04); }
-    .photo-placeholder {
-      background: linear-gradient(135deg, #e0eaf4, #c8ddef);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 2rem; height: 100%;
-    }
-
-    /* ─── NEWS ─── */
-    .news-list { display: flex; flex-direction: column; gap: 1rem; }
+    /* ---------- NEWS ---------- */
+    .news-list { display: grid; gap: .9rem; }
     .news-item {
-      display: grid; grid-template-columns: 80px 1fr;
-      gap: 1.2rem; align-items: start;
-      padding: 1.2rem 1.4rem; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 10px;
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 1.15rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
     }
-    .news-date { font-size: 0.78rem; font-weight: 700; color: var(--accent); text-align: center; line-height: 1.3; padding-top: 2px; }
-    .news-text { font-size: 0.9rem; color: var(--text); }
-    .news-text a { color: var(--accent); }
+    .news-date { color: var(--accent); font-size: .76rem; font-weight: 700; text-align: center; }
+    .news-text { font-size: .89rem; }
+    .news-text a { color: var(--accent); font-weight: 600; }
 
-    /* ─── CONTACT ─── */
+    /* ---------- CONTACT ---------- */
     .contact-box {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 16px; padding: 3rem; text-align: center; max-width: 620px; margin: 0 auto;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.6rem;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
     }
-    .contact-box p { color: var(--muted); font-size: 0.97rem; margin-bottom: 1.6rem; }
-    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .contact-box p { max-width: 650px; margin: 0 auto 1.45rem; color: var(--muted); }
+    .contact-box .btn-row { justify-content: center; }
 
-    /* ─── FOOTER ─── */
     footer {
-      border-top: 1px solid var(--border); text-align: center;
-      padding: 2rem; font-size: 0.82rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
     }
 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo-placeholder, .hero-photo { justify-self: center; order: -1; }
-      .hero-links { justify-content: center; }
-      .tags { justify-content: center; }
+    /* ---------- SMALL SCREEN ---------- */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
       .research-card { grid-template-columns: 1fr; }
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-photo, .photo-placeholder { justify-self: start; max-width: 220px; }
+      .cards-grid, .skills-grid { grid-template-columns: 1fr; }
+      .research-card img, .research-visual { min-height: 220px; }
+      .nav-links { gap: .75rem; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner { padding: .4rem 0; }
+      .nav-logo { font-size: 1.15rem; }
       .nav-links { display: none; }
+      section { padding: 4rem 0; }
+      .hero { padding: 4.5rem 0 4rem; }
+      .hero h1 { font-size: 3.7rem; }
+      .hero-summary { font-size: .96rem; }
+      .pub-item { grid-template-columns: 1fr; gap: .65rem; }
+      .news-item { grid-template-columns: 1fr; gap: .4rem; }
+      .news-date { text-align: left; }
+      .contact-box { padding: 2rem 1.25rem; }
     }
   </style>
 </head>
+
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#">Sumit Kumar</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#photos">Photos</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <span class="hero-badge">PhD Scholar</span>
-    <h1>Sumit Kumar</h1>
-    <p class="hero-affil">
-      Centre for atmospheric and oceanic sciences (CAOS)<br>
-      <strong>Indian Institute of Science (CAOS), Bengalore</strong>
-    </p>
-    <div class="hero-links">
-      <a href="mailto:sumitkumar15@iisc.ac.in" class="btn btn-primary">✉ Email</a>
-      <a href="https://www.linkedin.com/in/sumit-kumar-878068175/" class="btn btn-outline" target="_blank">LinkedIn</a>
-      <a href="#publications" class="btn btn-outline">Publications</a>
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top">Sumit Kumar</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <div class="tags">
-      <span class="tag">Climate Modelling</span>
-      <span class="tag">Black Carbon</span>
-      <span class="tag">Aerosol Forcing</span>
-      <span class="tag">Climate Efficacy</span>
-    
-      <!-- Add or edit your research keywords -->
-    </div>
-  </div>
-  <!-- Replace with your actual photo: <img src="photo.jpg" class="hero-photo" alt="Your Name"> -->
-  <div class="hero-photo-placeholder">S</div>
-</div>
+  </nav>
 
-<hr class="divider">
+  <main id="top">
+    <!-- ==================== HERO ==================== -->
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge">Atmospheric &amp; Climate Scientist</span>
+          <h1>Sumit Kumar</h1>
+          <p class="hero-role">
+            PhD Candidate, <strong>Centre for Atmospheric &amp; Oceanic Sciences (CAOS)</strong><br>
+            Indian Institute of Science (IISc), Bengaluru
+          </p>
+          <p class="hero-summary">
+            I study how major anthropogenic climate drivers alter Earth’s radiative balance and how those forcings translate into climate response. My work combines Earth System Model experiments with the radiative kernel technique to diagnose forcing efficacy and climate feedbacks.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:sumitkumarpal64@gmail.com">✉ Email</a>
+            <a class="btn btn-outline" href="Sumit_Kumar_CV.pdf" target="_blank" rel="noopener">↓ View CV</a>
+            <a class="btn btn-outline" href="https://github.com/sumitclimate" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/sumit-kumar-878068175/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <div class="tags" aria-label="Research keywords">
+            <span class="tag">Radiative Forcing</span>
+            <span class="tag">Climate Feedbacks</span>
+            <span class="tag">Methane</span>
+            <span class="tag">Black Carbon</span>
+            <span class="tag">Stratospheric Aerosols</span>
+            <span class="tag">Solar Geoengineering</span>
+            <span class="tag">CESM / CAM5</span>
+          </div>
+        </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <p class="section-label">Introduction</p>
-  <h2 class="section-title">About Me</h2>
-  <p class="section-subtitle">Climate scientist studying aerosol–climate interactions</p>
-  <p class="about-text">
-    I am a 5th-year PhD research scholar at the <strong>CAOS</strong>,
-    IISc Bangalore. My research focuses on the radiative and climate effects of Methane, Black Carbon aerosols and feedback
-    analysis using CAM5 simulations.
-    <br><br>
-    <!--[Add another paragraph here describing your methodology, tools, or broader goals.]-->
-  </p>
-</section>
-
-<hr class="divider">
-
-<!-- EDUCATION -->
-<section id="education">
-  <p class="section-label">Background</p>
-  <h2 class="section-title">Education</h2>
-  <!--p class="section-subtitle">Academic journey </p-->
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-year">2021 – Present</div>
-      <div class="tl-degree">PhD, Atmospheric Science</div>
-      <div class="tl-dept"><a href="#" style="color:inherit;">CAOS</a></div>
-      <div class="tl-inst">IISc, Bangalore</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">2017 – 2019</div>
-      <div class="tl-degree">M.Sc., Physcics</div>
-      <div class="tl-dept">Department of Physics</div>
-      <div class="tl-inst">University of Delhi, Delhi</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">2014 – 2017</div>
-      <div class="tl-degree">B.Sc., Physcics (Hons)</div>
-      <div class="tl-dept">Department of Physics</div>
-      <div class="tl-inst">Kirorimal College, University of Delhi, Delhi]</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- RESEARCH -->
-<section id="research">
-  <p class="section-label">Work</p>
-  <h2 class="section-title">Research</h2>
-  <p class="section-subtitle">Current projects on aerosol–climate feedbacks</p>
-  <div class="research-grid">
-
-    <div class="research-card">
-      <img src="Figure8.png" alt="Research Figure 1">
-      <!--div class="research-img-placeholder">🌍</div-->
-      <div class="research-body">
-        <h3>Contrast in slow climate response to methane and carbon dioxide forcings identified using the radiative kernel technique</h3>
-        <p>
-          Methane is the third most significant anthropogenic driver of climate change after carbon dioxide and aerosols, 
-          contributing about one-fourth of carbon dioxide’s effective radiative forcing in the industrial era. This study 
-          compares the slow climate responses to carbon dioxide (CO2) and methane (CH4) radiative forcings by estimating 
-          individual climate feedbacks using radiative kernels. We use the National Center for Atmospheric Research (NCAR)
-          Community Atmosphere Model, version 5 (CAM5) and our experiments show that for comparable radiative forcing, 
-          methane forcing’s efficacy in the 10xCH4 experiment (0.90) is smaller than the efficacy of 1.35xCO2 (unity). 
-          This lower efficacy of the slow response for CH4 owing to its more negative feedback (- 1.08 W m-2 K-1) compared 
-          to CO2 (- 0.97 W m-2 K-1) is attributed to differences in lapse rate, water vapor, shortwave cloud, and albedo feedbacks.
-        </p>
-        <a class="research-link" href="https://doi.org/10.1175/JCLI-D-24-0728.1">→ Related Publication</a>
+        <!-- Replace this placeholder with your portrait when ready:
+             <img class="hero-photo" src="profile.jpg" alt="Portrait of Sumit Kumar"> -->
+        <div class="photo-placeholder" aria-label="Profile photo placeholder">S</div>
       </div>
-    </div>
+    </header>
 
-    <div class="research-card">
-      <img src="Figure.png" alt="Research Figure 2">
-      <!--<img src="Figure3.png" alt="Research Figure 2">-->
-      <!--<div class="research-img-placeholder">🌡️</div>-->
-      <div class="research-body">
-        <h3>Radiative Kernel Analysis Reveals Weaker Climate Sensitivity to Black Carbon Forcing than to Carbon Dioxide</h3>
-        <p>
-          Black carbon (BC) aerosols perturb Earth’s energy balance through strong atmospheric absorption and associated semi-direct effects,
-          yet the climate response to BC forcing remains uncertain. Here, we quantify the equilibrium climate response 
-          to enhanced BC forcing by increasing the BC concentration by a factor of 20 and comparing it to a CO2 doubling experiment using the 
-          NCAR Community Atmosphere Model version 5 (CAM5). We find that the warming per unit ERF is smaller for BC than CO2 (~0.6 vs ~0.8 K per W m-2), implying 
-          lower efficacy. The lower efficacy is dominated by a sign reversal of the global-mean shortwave cloud feedback (-0.15 W m-2 K-1 for BC 
-          versus +0.25 W m-2 K-1 for CO2), linked to hemispherically asymmetric BC heating, a northward ITCZ shift, and associated cloud reorganization
-          that enhances low clouds. The hemipsherically asymmetric BC heating also weakens surface-albedo feedback by limiting Southern Hemisphere 
-          sea-ice melt. Further, BC’s top-heavy warming in the fast adjustments makes lapse-rate feedback more negative. Although water-vapor and 
-          longwave cloud feedbacks strengthen under BC, they do not offset these damping effects.
-        </p>
-        <a class="research-link" href="#">→ Related Publication</a>
+    <hr class="divider">
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+      <div class="container">
+        <span class="eyebrow">Profile</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Research at the intersection of atmospheric composition, radiative forcing, and climate response.</p>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I am a PhD Candidate in Atmospheric &amp; Oceanic Sciences at the <strong>Indian Institute of Science (IISc), Bengaluru</strong>, where I have been working in CAOS since February 2021. My research focuses on quantifying and understanding the climate impacts of key anthropogenic emissions and comparing how different radiative forcings translate into climate responses.
+            </p>
+            <p>
+              My work uses the <strong>radiative kernel technique</strong> together with controlled experiments in the <strong>Community Earth System Model / Community Atmosphere Model</strong> framework. I am particularly interested in methane, black carbon aerosol, stratospheric sulfate aerosol injection, and solar-radiation-modification strategies, with an emphasis on diagnosing feedbacks rather than considering radiative forcing in isolation.
+            </p>
+          </div>
+
+          <div class="facts" aria-label="Professional facts">
+            <div class="fact">
+              <span class="fact-label">Affiliation</span>
+              <div class="fact-value">CAOS, IISc Bengaluru</div>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Research Focus</span>
+              <div class="fact-value">Radiative forcing &amp; climate feedbacks</div>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Models</span>
+              <div class="fact-value">CESM 1.2.2 / CAM5</div>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Methods</span>
+              <div class="fact-value">Radiative kernels, climate diagnostics, HPC</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <hr class="divider">
 
-<hr class="divider">
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education">
+      <div class="container">
+        <span class="eyebrow">Background</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic training in atmospheric science and physics.</p>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <p class="section-label">Scholarly Output</p>
-  <h2 class="section-title">Publications</h2>
-  <p class="section-subtitle">Peer-reviewed articles and conference papers</p>
-  <div class="pub-list">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-year">February 2021 – 2026 (expected)</div>
+            <div class="tl-title">PhD, Atmospheric &amp; Oceanic Sciences</div>
+            <div class="tl-accent">Centre for Atmospheric &amp; Oceanic Sciences (CAOS)</div>
+            <div class="tl-meta">Indian Institute of Science (IISc), Bengaluru</div>
+          </div>
 
-    <div class="pub-item">
-      <span class="pub-type">Journal</span>
-      <div>
-        <a class="pub-title" href="https://doi.org/10.1175/JCLI-D-24-0728.1" target="_blank">
-          Contrast in slow climate response to methane and carbon dioxide forcings identified using the radiative kernel technique
-        </a>
-        <div class="pub-authors">Sumit Kumar, Ashwin K Seshadri, and Govindasamy Bala</div>
-        <div class="pub-venue">Journal of Climate, Year · doi:https://doi.org/10.1175/JCLI-D-24-0728.1</div>
+          <div class="tl-item">
+            <div class="tl-year">2017 – 2019</div>
+            <div class="tl-title">M.Sc., Physics</div>
+            <div class="tl-accent">Department of Physics</div>
+            <div class="tl-meta">S.G.T.B. Khalsa College, University of Delhi</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-year">2014 – 2017</div>
+            <div class="tl-title">B.Sc. (Hons.), Physics</div>
+            <div class="tl-accent">Department of Physics</div>
+            <div class="tl-meta">Kirori Mal College, University of Delhi</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="pub-item">
-      <span class="pub-type">Conference</span>
-      <div>
-        <a class="pub-title" href="https://doi.org/10.5194/egusphere-egu25-5950" target="_blank">
-          An Estimation of the Efficacy of Methane Radiative Forcing Using Radiative Kernels
-        </a>
-        <div class="pub-authors">Sumit Kumar, Ashwin K. Seshadri, and Govindasamy Bala</div>
-        <div class="pub-venue">EGU General Assembly 2025, Vienna, Austria, 27 April–2 May 2025</div>
+    <hr class="divider">
+
+    <!-- ==================== RESEARCH ==================== -->
+    <section id="research">
+      <div class="container">
+        <span class="eyebrow">Current Work</span>
+        <h2 class="section-title">Research</h2>
+        <p class="section-subtitle">Climate-system experiments and feedback analysis across greenhouse gases, aerosols, and solar-radiation-modification strategies.</p>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <img src="Figure8.png" alt="Radiative kernel analysis of methane and carbon dioxide climate response">
+            <div class="research-body">
+              <div class="research-kicker">Published · Journal of Climate · 2025</div>
+              <h3>Contrast in slow climate response to methane and carbon dioxide forcings identified using the radiative kernel technique</h3>
+              <p>
+                This study compares the slow climate responses to CO₂ and CH₄ radiative forcing using CAM5 experiments and radiative kernels. For comparable radiative forcing, the efficacy of the 10×CH₄ experiment is lower than that of 1.35×CO₂. The difference is associated with a more negative aggregate feedback response for methane, with important contributions from lapse-rate, water-vapor, shortwave-cloud, and surface-albedo feedbacks.
+              </p>
+              <a class="research-link" href="https://doi.org/10.1175/JCLI-D-24-0728.1" target="_blank" rel="noopener">→ Read the publication</a>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <img src="Figure.png" alt="Black carbon versus carbon dioxide climate sensitivity analysis">
+            <div class="research-body">
+              <div class="research-kicker">Under Review · Journal of Climate · 2026</div>
+              <h3>Radiative Kernel Analysis Reveals Weaker Climate Sensitivity to Black Carbon Forcing than to Carbon Dioxide</h3>
+              <p>
+                This work quantifies climate response to enhanced black-carbon forcing and compares it with a CO₂ doubling experiment in CAM5. The analysis indicates weaker warming per unit effective radiative forcing for black carbon, with the difference linked to cloud, albedo, and lapse-rate feedback changes associated with the spatially asymmetric and vertically concentrated heating from BC.
+              </p>
+              <span class="research-link" aria-label="Publication status">→ Manuscript submitted June 2026</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" role="img" aria-label="Placeholder for stratospheric aerosol research figure">SAI</div>
+            <div class="research-body">
+              <div class="research-kicker">Manuscript in Preparation</div>
+              <h3>Contrast in Solar and Sulfate Aerosol Forcings Does Not Translate into Their Climate Responses</h3>
+              <p>
+                I designed and ran multi-decadal CESM1.2.2 experiments with CAM5 physics and the Bulk Aerosol Model to investigate volcanic sulfate aerosol injection at multiple stratospheric altitudes under a doubled-CO₂ background. The experiments use both slab-ocean and prescribed-SST configurations to compare sulfate-aerosol and solar-constant-reduction solar-radiation-modification strategies.
+              </p>
+              <span class="research-link">→ Current research</span>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== PUBLICATIONS ==================== -->
+    <section id="publications">
+      <div class="container">
+        <span class="eyebrow">Scholarly Output</span>
+        <h2 class="section-title">Publications &amp; Presentations</h2>
+        <p class="section-subtitle">Peer-reviewed work, manuscripts under review, and conference contributions.</p>
+
+        <div class="pub-list">
+          <article class="pub-item">
+            <span class="pub-type">Journal</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.1175/JCLI-D-24-0728.1" target="_blank" rel="noopener">
+                Contrast in slow climate response to methane and carbon dioxide forcings identified using the radiative kernel technique
+              </a>
+              <div class="pub-authors">Kumar, S., Seshadri, A. K., &amp; Bala, G.</div>
+              <div class="pub-venue">Journal of Climate, 2025</div>
+              <div class="pub-note">DOI: 10.1175/JCLI-D-24-0728.1</div>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <span class="pub-type">Under Review</span>
+            <div>
+              <div class="pub-title">Radiative Kernel Analysis Reveals Weaker Climate Sensitivity to Black Carbon Forcing than to Carbon Dioxide</div>
+              <div class="pub-authors">Kumar, S., Seshadri, A. K., &amp; Bala, G.</div>
+              <div class="pub-venue">Journal of Climate · submitted June 2026</div>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <span class="pub-type">In Preparation</span>
+            <div>
+              <div class="pub-title">Contrast in Solar and Sulfate Aerosol Forcings Does Not Translate into Their Climate Responses</div>
+              <div class="pub-authors">Kumar, S., Seshadri, A. K., &amp; Bala, G.</div>
+              <div class="pub-venue">Manuscript in preparation</div>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <span class="pub-type">Conference</span>
+            <div>
+              <a class="pub-title" href="https://doi.org/10.5194/egusphere-egu25-5950" target="_blank" rel="noopener">
+                An Estimation of the Efficacy of Methane Radiative Forcing Using Radiative Kernels
+              </a>
+              <div class="pub-authors">Kumar, S.</div>
+              <div class="pub-venue">EGU General Assembly 2025, Vienna, Austria</div>
+              <div class="pub-note">DOI: 10.5194/egusphere-egu25-5950</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience">
+      <div class="container">
+        <span class="eyebrow">Experience</span>
+        <h2 class="section-title">Research &amp; Professional Experience</h2>
+        <p class="section-subtitle">Model development, scientific computing, diagnostics, and teaching-oriented work.</p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>PhD Researcher · CAOS, IISc</h3>
+            <p><strong>February 2021 – Present</strong></p>
+            <ul>
+              <li>Radiative-efficacy analysis for methane, carbon dioxide, and black carbon.</li>
+              <li>Multi-decadal CESM/CAM experiments for aerosol–climate and SRM research.</li>
+              <li>Feedback decomposition using radiative kernels.</li>
+              <li>CESM/CAM source-code diagnostics and configuration troubleshooting.</li>
+              <li>Porting MATLAB-based radiative-kernel workflows to Python.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Subject Matter Expert (Physics) · Chegg India Pvt. Ltd.</h3>
+            <p><strong>May 2019 – September 2020</strong></p>
+            <p>Provided subject-matter support in physics, with an emphasis on technical problem solving and clear scientific explanations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills">
+      <div class="container">
+        <span class="eyebrow">Toolkit</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Tools and methods used in climate-model experiments, diagnostics, and scientific visualization.</p>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Climate &amp; Earth System Models</h3>
+            <p>CESM, CAM5 physics, Bulk Aerosol Model, multi-decadal coupled simulations, prescribed-SST and slab-ocean configurations.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Programming &amp; Scripting</h3>
+            <p>Python (xarray, NumPy, NetCDF), MATLAB, Fortran, Bash / Shell.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Scientific Methods</h3>
+            <p>Radiative kernel technique, radiative forcing and efficacy analysis, feedback decomposition, aerosol–climate diagnostics.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Computing &amp; Visualization</h3>
+            <p>Linux / Unix environments, high-performance computing (HPC) clusters, and Blender for 3D scientific illustration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== AWARDS ==================== -->
+    <section id="awards">
+      <div class="container">
+        <span class="eyebrow">Recognition</span>
+        <h2 class="section-title">Awards &amp; Scholarships</h2>
+        <p class="section-subtitle">Selected fellowships and competitive academic distinctions.</p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <h3>MHRD Fellowship</h3>
+            <p>Indian Institute of Science</p>
+          </div>
+          <div class="card">
+            <h3>Grantham Scholarship</h3>
+            <p>Scholarship listed in the academic CV.</p>
+          </div>
+          <div class="card">
+            <h3>GATE (Physics) 2020</h3>
+            <p>All India Rank 386.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== NEWS ==================== -->
+    <section id="news">
+      <div class="container">
+        <span class="eyebrow">Updates</span>
+        <h2 class="section-title">News &amp; Academic Updates</h2>
+        <p class="section-subtitle">Recent milestones and research activities.</p>
+
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-date">2026</div>
+            <div class="news-text">Black-carbon climate-sensitivity manuscript submitted to <em>Journal of Climate</em>.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">2025</div>
+            <div class="news-text">Research on the slow climate response to methane and carbon dioxide published in <em>Journal of Climate</em>. <a href="https://doi.org/10.1175/JCLI-D-24-0728.1" target="_blank" rel="noopener">Read article</a>.</div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">Apr–May 2025</div>
+            <div class="news-text">Presented research on methane radiative-forcing efficacy at the EGU General Assembly in Vienna, Austria. <a href="https://doi.org/10.5194/egusphere-egu25-5950" target="_blank" rel="noopener">Conference abstract</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <span class="eyebrow">Get in Touch</span>
+          <h2 class="section-title">Contact</h2>
+          <p>
+            I am interested in research discussions and collaborations related to climate forcing, aerosols, radiative feedbacks, Earth System Models, and solar-radiation-modification experiments.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="mailto:sumitkumarpal64@gmail.com">✉ sumitkumarpal64@gmail.com</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/sumit-kumar-878068175/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-outline" href="https://github.com/sumitclimate" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline" href="Sumit_Kumar_CV.pdf" target="_blank" rel="noopener">View CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Sumit Kumar · Centre for Atmospheric &amp; Oceanic Sciences, Indian Institute of Science · Hosted on GitHub Pages
     </div>
-
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- AWARDS -->
-<section id="awards">
-  <p class="section-label">Recognition</p>
-  <h2 class="section-title">Awards & Fellowships</h2>
-  <p class="section-subtitle">Recognitions received throughout my academic career</p>
-  <div class="awards-grid">
-    <div class="award-card">
-      <div class="award-icon">🏆</div>
-      <div class="award-name">Award / Fellowship Name</div>
-      <div class="award-meta">Year – Present · Brief description of the award and awarding body.</div>
-    </div>
-    <div class="award-card">
-      <div class="award-icon">🎖</div>
-      <div class="award-name">Award / Fellowship Name</div>
-      <div class="award-meta">Year · Brief description.</div>
-    </div>
-    <div class="award-card">
-      <div class="award-icon">🔬</div>
-      <div class="award-name">Award / Fellowship Name</div>
-      <div class="award-meta">Year · Brief description.</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- PHOTOS -->
-<section id="photos">
-  <p class="section-label">Personal</p>
-  <h2 class="section-title">Photography</h2>
-  <p class="section-subtitle">Moments captured through my lens — nature, fieldwork, and travels</p>
-  <div class="photo-grid">
-    <!-- Replace each placeholder with: <img src="IMG_1.jpeg" alt="Caption"> -->
-    <div class="photo-item"><div class="photo-placeholder">🌄</div></div>
-    <div class="photo-item"><div class="photo-placeholder">🌊</div></div>
-    <div class="photo-item"><div class="photo-placeholder">🌿</div></div>
-    <div class="photo-item"><div class="photo-placeholder">🏔</div></div>
-    <div class="photo-item"><div class="photo-placeholder">🌤</div></div>
-    <div class="photo-item"><div class="photo-placeholder">🌻</div></div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- NEWS -->
-<section id="news">
-  <p class="section-label">Updates</p>
-  <h2 class="section-title">News & Links</h2>
-  <p class="section-subtitle">Recent activities, features, and events</p>
-  <div class="news-list">
-    <div class="news-item">
-      <div class="news-date">Mon YYYY</div>
-      <div class="news-text">Brief description of news item. <a href="#">Link to source</a>.</div>
-    </div>
-    <div class="news-item">
-      <div class="news-date">Mon YYYY</div>
-      <div class="news-text">Brief description of another news item. <a href="#">Link to source</a>.</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-label">Get in Touch</p>
-  <h2 class="section-title" style="text-align:center;">Contact</h2>
-  <p class="section-subtitle" style="text-align:center;">Open to research discussions, collaborations, and academic conversations.</p>
-  <div class="contact-box">
-    <p>Feel free to reach out via email or connect on LinkedIn for collaboration, questions, or discussions about my research.</p>
-    <div class="contact-links">
-      <a href="mailto:your.email@institution.ac.in" class="btn btn-primary">✉ your.email@institution.ac.in</a>
-      <a href="https://linkedin.com/in/yourprofile" class="btn btn-outline" target="_blank">🔗 LinkedIn</a>
-      <a href="https://your-institution.ac.in" class="btn btn-outline" target="_blank">🏛 Institution</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2025 Your Name · [Your Department], [Institution] · Hosted on GitHub Pages
-</footer>
-
+  </footer>
 </body>
 </html>
